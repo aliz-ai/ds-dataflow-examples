@@ -52,8 +52,8 @@ public class CustomWindowingPipeline {
     public static final String PUBSUB_TOPIC_ID = "custom_windowing";
     public static final String BQ_TABLE_PREFIX = "data";
     public static final String BQ_DATASET = "custom_windowing";
-    public static final String PROJECT = "ds-bq-demo";
-    public static final String STAGING_LOCATION = "gs://ds_custom_windowing/staging/";
+    public static final String PROJECT = "...";
+    public static final String STAGING_LOCATION = "gs://...";
 
     public static void main(String[] args) {
         DataflowPipelineOptions options = PipelineOptionsFactory.create().as(DataflowPipelineOptions.class);
@@ -116,7 +116,7 @@ public class CustomWindowingPipeline {
         }
 
         public String apply(BoundedWindow window) {
-            Preconditions.checkArgument((window instanceof FixedKeyedWindow), "This naming can be used only with ");
+            Preconditions.checkArgument((window instanceof FixedKeyedWindow), "This naming can be used only with FixedKeyedWindow");
 
             String key = ((FixedKeyedWindow)window).key();
             return qualifiedTableName + "_" + key;
