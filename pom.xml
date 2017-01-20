@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.doctusoft.dataflow</groupId>
+	<artifactId>dataflow-examples</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+
+	<properties>
+		<version.gcp.dataflow>1.9.0</version.gcp.dataflow>
+		<version.lombok>1.16.10</version.lombok>
+		<version.guava>21.0</version.guava>
+		<version.log4j>2.7</version.log4j>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.cloud.dataflow</groupId>
+			<artifactId>google-cloud-dataflow-java-sdk-all</artifactId>
+			<version>${version.gcp.dataflow}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${version.guava}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${version.log4j}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>${version.log4j}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${version.log4j}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${version.lombok}</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+</project>
