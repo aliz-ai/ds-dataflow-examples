@@ -45,6 +45,8 @@ public class EventSimulator {
             ApiFuture<String> publish = publisher.publish(PubsubMessage.newBuilder().setData(ByteString.copyFrom(json, StandardCharsets.UTF_8)).build());
     
             log.info("Event {} sended, id: {}", json, publish.get());
+            
+            Thread.sleep(200);
         }
     }
 }
