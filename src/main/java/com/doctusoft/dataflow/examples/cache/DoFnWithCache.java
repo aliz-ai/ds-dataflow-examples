@@ -3,8 +3,9 @@ package com.doctusoft.dataflow.examples.cache;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-import com.google.cloud.dataflow.sdk.transforms.DoFn;
 import com.google.common.collect.Sets;
+
+import org.apache.beam.sdk.transforms.DoFn;
 
 /**
  * Created by cskassai on 2017. 05. 26..
@@ -14,21 +15,20 @@ public class DoFnWithCache extends DoFn<String, String> {
     public static final String FILTER_KEY = "key";
     private DataflowInMemoryCache dataflowInMemoryCache;
     
-    @Override
-    public void startBundle(Context c) throws Exception {
-        super.startBundle(c);
+    @Setup
+    public void setup() throws Exception {
         dataflowInMemoryCache = DataflowInMemoryCache.builder()
                                                      .addConfiguration(FILTER_KEY,
                                                                        DataflowInMemoryCache.CacheConfiguration.builder()
                                                                                                                .refreshPredicate((e) -> e.getLoadedAt()
                                                                                                                                          .isBefore(LocalDateTime.now()
                                                                                                                                                                 .minusMinutes(5l)))
-                                                                                                               .supplier(() -> Sets.newHashSet("alma", "korte"))
+                                                                                                               .supplier(() -> Sets.newHashSet("key1", "key2"))
                                                                                                                .build())
                                                      .build();
     }
     
-    @Override
+    @ProcessElement
     public void processElement(ProcessContext c) throws Exception {
         
         Set<String> dataToFilter = dataflowInMemoryCache.get(FILTER_KEY);
