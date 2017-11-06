@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>dataflow-1</module>
         <module>dataflow-2</module>
     </modules>
 
