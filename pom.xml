@@ -26,7 +26,7 @@
 		<version.gcp.dataflow>1.9.0</version.gcp.dataflow>
 		<version.lombok>1.16.10</version.lombok>
 		<version.guava>21.0</version.guava>
-		<version.log4j>2.7</version.log4j>
+		<version.log4j>2.13.3</version.log4j>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
